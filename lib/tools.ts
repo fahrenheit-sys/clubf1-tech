@@ -30,4 +30,11 @@ export const TOOLS: Tool[] = [
     url: 'https://engagement.clubf1.tech',
     live: true,
   },
+  {
+    key: 'accountability',
+    name: 'Accountability',
+    description: 'Daily KPI scorecard and ops checklist, rolled up weekly for managers and monthly for the board — goals set by Fahrenheit One HQ.',
+    url: 'https://accountability.clubf1.tech',
+    live: true,
+  },
 ]

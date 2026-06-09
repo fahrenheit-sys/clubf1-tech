@@ -21,6 +21,6 @@ export const TOOLS: Tool[] = [
     name: 'Mission Control',
     description: 'The GM command centre — capture insights by domain, triage them, dispatch to the team via ClickUp, and generate AI strategic briefs.',
     url: 'https://mc.clubf1.tech',
-    live: false,
+    live: true,
   },
 ]

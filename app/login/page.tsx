@@ -31,8 +31,10 @@ export default function LoginPage() {
       const res = await login(email, password)
       if (!res.ok) { setError(res.error); return }
       const next = safeRedirect(new URLSearchParams(window.location.search).get('next'))
-      if (next && next.startsWith('http')) window.location.assign(next)
-      else { router.replace(next || '/'); router.refresh() }
+      // No explicit destination → owners go to Team Access, others to the hub.
+      const target = next ?? (res.owner ? '/admin' : '/')
+      if (target.startsWith('http')) window.location.assign(target)
+      else { router.replace(target); router.refresh() }
     })
   }
 

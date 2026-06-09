@@ -1,13 +1,35 @@
 import { TOOLS } from '@/lib/tools'
 import { UI } from '@/lib/theme'
+import { getSessionUser } from '@/lib/auth'
+import { isSuperAdmin } from '@/lib/access'
 
 const ACCENT = '#C15A35' // Fahrenheit One terracotta
 
-export default function Landing() {
+export const dynamic = 'force-dynamic'
+
+export default async function Landing() {
+  const session = await getSessionUser()
+  const owner = session ? isSuperAdmin(session) : false
+
+  const link: React.CSSProperties = { fontSize: 13, color: UI.textMuted, textDecoration: 'none' }
+
   return (
     <div style={{ minHeight: '100vh', background: UI.bg, display: 'flex', flexDirection: 'column' }}>
+      {/* Account bar */}
+      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: 16, padding: '16px 28px' }}>
+        {session ? (
+          <>
+            <span style={{ fontSize: 13, color: UI.text }}>{session.email}</span>
+            {owner && <a href="/admin" style={{ ...link, color: ACCENT, fontWeight: 600 }}>Team Access</a>}
+            <a href="/logout" style={link}>Sign out</a>
+          </>
+        ) : (
+          <a href="/login" style={{ ...link, color: ACCENT, fontWeight: 600 }}>Sign in →</a>
+        )}
+      </div>
+
       {/* Hero */}
-      <header style={{ textAlign: 'center', padding: '96px 24px 56px' }}>
+      <header style={{ textAlign: 'center', padding: '60px 24px 56px' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/fahrenheit-one-logo.png" alt="Fahrenheit One" style={{ height: 64, width: 'auto', margin: '0 auto' }} />
         <div style={{ marginTop: 16, fontSize: 12, letterSpacing: '0.32em', textTransform: 'uppercase', color: UI.textFaint }}>
@@ -53,9 +75,7 @@ export default function Landing() {
 
       {/* Footer */}
       <footer style={{ borderTop: `1px solid ${UI.border}`, padding: '24px', textAlign: 'center' }}>
-        <span style={{ fontSize: 13, color: UI.textMuted }}>Team member? </span>
-        <a href="/login" style={{ fontSize: 13, color: ACCENT, fontWeight: 600, textDecoration: 'none' }}>Sign in →</a>
-        <div style={{ marginTop: 10, fontSize: 11, color: UI.textFaint, letterSpacing: '0.1em' }}>
+        <div style={{ fontSize: 11, color: UI.textFaint, letterSpacing: '0.1em' }}>
           FAHRENHEIT ONE · CLUB F1 TECH
         </div>
       </footer>

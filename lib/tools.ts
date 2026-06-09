@@ -23,4 +23,11 @@ export const TOOLS: Tool[] = [
     url: 'https://mc.clubf1.tech',
     live: true,
   },
+  {
+    key: 'engagement',
+    name: 'Engagement Monitor',
+    description: 'Member at-risk scoring from engagement tags, with AI-drafted retention comms a trainer approves before they go out.',
+    url: 'https://engagement.clubf1.tech',
+    live: true,
+  },
 ]

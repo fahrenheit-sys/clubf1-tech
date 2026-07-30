@@ -15,8 +15,8 @@ export default async function Landing() {
   return (
     <div style={{ minHeight: '100vh', background: UI.bg, display: 'flex', flexDirection: 'column' }}>
       {/* Plum hero band — the same glow gradient the marketing site uses */}
-      <header className="hero-band" style={{ background: UI.glow, borderBottom: `1px solid ${UI.plumLine}`, padding: '0 0 64px' }}>
-        <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: 18, padding: '16px 28px' }}>
+      <header className="hero-band" style={{ background: UI.glow, borderBottom: `1px solid ${UI.plumLine}`, padding: '0 0 30px' }}>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: 18, padding: '14px 28px' }}>
           {session ? (
             <>
               <span style={{ fontSize: 13, color: UI.onPlum }}>{session.email}</span>
@@ -28,17 +28,17 @@ export default async function Landing() {
           )}
         </div>
 
-        <div style={{ textAlign: 'center', padding: '36px 24px 0' }}>
+        <div className="hero-inner" style={{ textAlign: 'center', padding: '14px 24px 0' }}>
           {/* Cream wordmark — the clay logo disappears against plum */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/f1-wordmark-cream.png" alt="Fahrenheit One" style={{ height: 72, width: 'auto', margin: '0 auto', display: 'block' }} />
-          <div style={{ marginTop: 18, fontSize: 11, fontWeight: 600, letterSpacing: '0.32em', textTransform: 'uppercase', color: UI.clayText }}>
+          <img src="/f1-wordmark-cream.png" alt="Fahrenheit One" className="hero-mark" style={{ height: 50, width: 'auto', margin: '0 auto', display: 'block' }} />
+          <div style={{ marginTop: 12, fontSize: 10.5, fontWeight: 600, letterSpacing: '0.32em', textTransform: 'uppercase', color: UI.clayText }}>
             Technology Suite
           </div>
-          <h1 className="serif" style={{ marginTop: 26, fontSize: 'clamp(30px, 4.2vw, 46px)', fontWeight: 400, color: '#FFFFFF', lineHeight: 1.08 }}>
+          <h1 className="serif" style={{ marginTop: 14, fontSize: 'clamp(25px, 3vw, 34px)', fontWeight: 400, color: '#FFFFFF', lineHeight: 1.14 }}>
             Operational technology,<br />built in-house.
           </h1>
-          <p style={{ marginTop: 18, fontSize: 15.5, color: UI.onPlumMuted, maxWidth: 560, margin: '18px auto 0', lineHeight: 1.7 }}>
+          <p style={{ fontSize: 14, color: UI.onPlumMuted, maxWidth: 560, margin: '12px auto 0', lineHeight: 1.6 }}>
             A suite of tools powering Fahrenheit One @ Hakoah Paddington — from pre-opening
             sales intelligence to day-to-day mission control.
           </p>
@@ -46,14 +46,14 @@ export default async function Landing() {
       </header>
 
       {/* Tool grid */}
-      <main style={{ flex: 1, width: '100%', maxWidth: 960, margin: '0 auto', padding: '56px 24px 80px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
+      <main style={{ flex: 1, width: '100%', maxWidth: 960, margin: '0 auto', padding: '26px 24px 18px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 16 }}>
           {TOOLS.map(tool => (
             <div key={tool.key} className="tool-card">
               <div className="rule" />
-              <div className="serif" style={{ fontSize: 22, fontWeight: 500, color: UI.text }}>{tool.name}</div>
-              <p style={{ marginTop: 10, fontSize: 14, color: UI.textMuted, lineHeight: 1.65, flex: 1 }}>{tool.description}</p>
-              <div style={{ marginTop: 22 }}>
+              <div className="serif" style={{ fontSize: 19, fontWeight: 500, color: UI.text }}>{tool.name}</div>
+              <p style={{ marginTop: 8, fontSize: 13.5, color: UI.textMuted, lineHeight: 1.6, flex: 1 }}>{tool.description}</p>
+              <div style={{ marginTop: 16 }}>
                 {tool.live ? (
                   <a href={tool.url} className="btn-solid">Open →</a>
                 ) : (
@@ -70,7 +70,7 @@ export default async function Landing() {
       </main>
 
       {/* Plum footer band */}
-      <footer style={{ background: UI.glow, borderTop: `1px solid ${UI.plumLine}`, padding: '28px 24px', textAlign: 'center' }}>
+      <footer style={{ background: UI.glow, borderTop: `1px solid ${UI.plumLine}`, padding: '18px 24px', textAlign: 'center' }}>
         <div className="mono" style={{ fontSize: 10, color: UI.onPlumFaint, letterSpacing: '0.22em' }}>
           FAHRENHEIT ONE · CLUB F1 TECH
         </div>

@@ -55,7 +55,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 16px;
   box-shadow: var(--shadow);
-  padding: 28px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   transition: transform 0.2s cubic-bezier(.4,0,.2,1), box-shadow 0.2s cubic-bezier(.4,0,.2,1);
@@ -69,7 +69,7 @@ body {
   width: 40px;
   background: var(--clay);
   border-radius: 2px;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   transition: width 0.2s cubic-bezier(.4,0,.2,1);
 }
 .tool-card:hover .rule { width: 64px; }
@@ -105,5 +105,17 @@ body {
 .fade-up { animation: fadeUp 0.35s ease forwards; }
 
 @media (max-width: 768px) {
-  .hero-band { padding: 48px 20px 44px !important; }
+  .hero-band { padding-bottom: 24px !important; }
+}
+
+/* Short viewports (laptops, split screens): shrink the hero rather than push
+   the tool tiles below the fold — the tiles are the point of this page. */
+@media (max-height: 800px) {
+  .hero-band            { padding-bottom: 18px !important; }
+  .hero-band .hero-mark { height: 38px !important; }
+  .hero-band h1         { font-size: clamp(22px, 2.4vw, 27px) !important; margin-top: 10px !important; }
+  .hero-band p          { font-size: 13px !important; margin-top: 9px !important; }
+  .hero-inner           { padding-top: 8px !important; }
+  .tool-card            { padding: 18px !important; }
+  .tool-card .rule      { margin-bottom: 11px !important; }
 }

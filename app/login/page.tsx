@@ -4,8 +4,6 @@ import { useRouter } from 'next/navigation'
 import { login } from '../auth-actions'
 import { UI } from '@/lib/theme'
 
-const ACCENT = '#C15A35'
-
 // Only redirect to the apex or a *.clubf1.tech subdomain (prevents open redirect).
 function safeRedirect(raw: string | null): string | null {
   if (!raw) return null
@@ -45,12 +43,19 @@ export default function LoginPage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: UI.bg, padding: 24 }}>
-      <div style={{ width: '100%', maxWidth: 400, background: UI.surface, borderRadius: UI.radius, border: `1px solid ${UI.border}`, boxShadow: UI.shadow, padding: '40px 36px' }}>
+    <div style={{
+      minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
+      background: UI.vignette, // the plum vignette the marketing site opens on
+      padding: 24,
+    }}>
+      <div style={{ width: '100%', maxWidth: 400, background: UI.surface, borderRadius: UI.radius, border: `1px solid ${UI.border}`, boxShadow: '0 8px 40px rgba(0,0,0,0.35)', padding: '40px 36px' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/fahrenheit-one-logo.png" alt="Fahrenheit One" style={{ height: 38, width: 'auto', display: 'block', margin: '0 auto 8px' }} />
         <div style={{ textAlign: 'center', fontSize: 11, letterSpacing: '0.22em', color: UI.textFaint, textTransform: 'uppercase', marginBottom: 32 }}>
           Club F1 Tech
+        </div>
+        <div className="mono" style={{ textAlign: 'center', fontSize: 9, letterSpacing: '0.2em', color: UI.textFaint, textTransform: 'uppercase', marginTop: -26, marginBottom: 32 }}>
+          @ Hakoah Paddington
         </div>
 
         <form onSubmit={submit}>
@@ -63,13 +68,13 @@ export default function LoginPage() {
             placeholder="••••••••" style={inputStyle} />
 
           {error && (
-            <div style={{ marginTop: 16, padding: '10px 12px', background: '#FFF1EF', border: `1px solid ${ACCENT}`, borderRadius: UI.radiusSm, fontSize: 13, color: '#8B3A2E' }}>
+            <div style={{ marginTop: 16, padding: '10px 12px', background: '#FBEFE9', border: `1px solid ${UI.clay}`, borderRadius: UI.radiusSm, fontSize: 13, color: UI.clayDeep }}>
               {error}
             </div>
           )}
 
           <button type="submit" disabled={pending}
-            style={{ width: '100%', marginTop: 24, padding: '12px', fontSize: 15, fontWeight: 600, background: pending ? '#A8482380' : UI.text, color: '#fff', border: 'none', borderRadius: UI.radiusSm, cursor: pending ? 'default' : 'pointer' }}>
+            style={{ width: '100%', marginTop: 24, padding: '12px', fontSize: 15, fontWeight: 600, background: pending ? UI.clay : UI.clayHover, color: '#fff', border: 'none', borderRadius: 6, cursor: pending ? 'default' : 'pointer', transition: 'background 0.15s' }}>
             {pending ? 'Signing in…' : 'Sign In'}
           </button>
         </form>

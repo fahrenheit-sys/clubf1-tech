@@ -6,8 +6,6 @@ import { logout } from '../auth-actions'
 import { createMember, setToolRole, setOwner, suspendMember, reactivateMember, deleteMember } from '../team-actions'
 import { UI } from '@/lib/theme'
 
-const ACCENT = '#C15A35'
-
 function fmtDate(s: string | null) {
   if (!s) return '—'
   const d = new Date(s)
@@ -51,9 +49,9 @@ export default function AdminClient({ team, tools, currentUserId, userEmail }: {
   const card: CSSProperties = { background: UI.surface, border: `1px solid ${UI.border}`, borderRadius: UI.radius, boxShadow: UI.shadow, padding: 24 }
   const btn = (variant: 'ghost' | 'danger' | 'solid'): CSSProperties => ({
     padding: '6px 12px', borderRadius: 8, fontSize: 12, fontWeight: 500, cursor: pending ? 'default' : 'pointer',
-    border: `1px solid ${variant === 'danger' ? '#E5B4AD' : UI.borderStrong}`,
-    background: variant === 'solid' ? UI.text : UI.surface,
-    color: variant === 'solid' ? '#fff' : variant === 'danger' ? '#8B3A2E' : UI.text,
+    border: `1px solid ${variant === 'danger' ? '#E6C0B2' : UI.borderStrong}`,
+    background: variant === 'solid' ? UI.clayHover : UI.surface,
+    color: variant === 'solid' ? '#fff' : variant === 'danger' ? UI.clayDeep : UI.text,
   })
   const roleSelect: CSSProperties = { ...input, padding: '5px 8px', fontSize: 12, width: 'auto' }
 
@@ -92,7 +90,7 @@ export default function AdminClient({ team, tools, currentUserId, userEmail }: {
           </div>
           <div style={{ marginTop: 10, fontSize: 12, color: UI.textFaint }}>Accounts start with no tool access — grant tools in the grid below.</div>
           {error && (
-            <div style={{ marginTop: 14, padding: '10px 12px', background: '#FFF1EF', border: `1px solid ${ACCENT}`, borderRadius: UI.radiusSm, fontSize: 12.5, color: '#8B3A2E' }}>{error}</div>
+            <div style={{ marginTop: 14, padding: '10px 12px', background: '#FBEFE9', border: `1px solid ${UI.clay}`, borderRadius: UI.radiusSm, fontSize: 12.5, color: UI.clayDeep }}>{error}</div>
           )}
         </div>
 
@@ -136,7 +134,7 @@ export default function AdminClient({ team, tools, currentUserId, userEmail }: {
                     ))}
                     <td style={{ ...td, textAlign: 'center' }}>
                       {m.isOwner
-                        ? <span style={{ display: 'inline-flex', padding: '2px 9px', borderRadius: 999, background: 'rgba(232,160,32,0.16)', color: '#9A6A0F', fontSize: 10, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Owner</span>
+                        ? <span style={{ display: 'inline-flex', padding: '2px 9px', borderRadius: 999, background: 'rgba(138,74,158,0.13)', color: '#6E3780', fontSize: 10, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Owner</span>
                         : null}
                       {!isSelf && (
                         <button onClick={() => run(m.id, () => setOwner(m.id, !m.isOwner))} disabled={pending}
@@ -148,7 +146,7 @@ export default function AdminClient({ team, tools, currentUserId, userEmail }: {
                     <td style={td}>
                       <span style={{ display: 'inline-flex', padding: '2px 9px', borderRadius: 999, fontSize: 10, letterSpacing: '0.08em', textTransform: 'uppercase',
                         background: m.status === 'active' ? 'rgba(74,107,80,0.12)' : 'rgba(139,58,46,0.12)',
-                        color: m.status === 'active' ? '#3A5A40' : '#8B3A2E' }}>
+                        color: m.status === 'active' ? '#6E3780' : UI.clayDeep }}>
                         {m.status === 'active' ? 'Active' : 'Suspended'}
                       </span>
                     </td>

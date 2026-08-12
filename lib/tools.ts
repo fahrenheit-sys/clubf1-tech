@@ -10,6 +10,15 @@ export type Tool = {
 
 export const TOOLS: Tool[] = [
   {
+    // One grant for all three Studio sections in Consolidation — Images,
+    // Movies and Marketing share the `studio` key.
+    key: 'studio',
+    name: 'Studio',
+    description: 'The image, movie and marketing libraries — brief new assets in the house style, and build co-branded pieces from what is already shot.',
+    url: 'https://app.clubf1.tech',
+    live: true,
+  },
+  {
     key: 'dashboard',
     name: 'Pre-Opening Dashboard',
     description: 'Live sales & market-intelligence for the Fahrenheit One pre-opening pipeline — leads, conversions, membership demand and opening-day readiness.',

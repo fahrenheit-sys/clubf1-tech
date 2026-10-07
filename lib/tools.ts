@@ -19,6 +19,15 @@ export const TOOLS: Tool[] = [
     live: true,
   },
   {
+    // A section of Consolidation (app.clubf1.tech/training). Member = practise,
+    // admin = also see every team member's sessions.
+    key: 'training',
+    name: 'Staff Training',
+    description: 'Spoken role-play practice with a scored debrief — welcoming prospects, and handling hostile, antisemitic visitors safely.',
+    url: 'https://app.clubf1.tech/training',
+    live: true,
+  },
+  {
     key: 'dashboard',
     name: 'Pre-Opening Dashboard',
     description: 'Live sales & market-intelligence for the Fahrenheit One pre-opening pipeline — leads, conversions, membership demand and opening-day readiness.',

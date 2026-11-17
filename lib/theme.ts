@@ -1,4 +1,4 @@
-// Fahrenheit One "Country Club" plum design tokens — shared with clubf1.com.au
+// The Grandstand "Country Club" plum design tokens — shared with clubf1.com.au
 // and dashboard.clubf1.tech. Plum bands for chrome, light tint for content.
 export const UI = {
   bg:          '#F7F2F6', // page background (plum tint)

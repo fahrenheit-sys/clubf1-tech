@@ -1,4 +1,4 @@
-// The Club F1 tool registry — powers both the public landing tiles and the
+// The Grandstand tool registry — powers both the public landing tiles and the
 // Team Access grid columns. Add a tool here and it appears in both places.
 export type Tool = {
   key: string        // matches the per-tool grant key in app_metadata.apps
@@ -22,15 +22,15 @@ export const TOOLS: Tool[] = [
     // A section of Consolidation (app.clubf1.tech/training). Member = practise,
     // admin = also see every team member's sessions.
     key: 'training',
-    name: 'Staff Training',
+    name: 'My Staff Trainer',
     description: 'Spoken role-play practice with a scored debrief — welcoming prospects, and handling hostile, antisemitic visitors safely.',
     url: 'https://app.clubf1.tech/training',
     live: true,
   },
   {
     key: 'dashboard',
-    name: 'Pre-Opening Dashboard',
-    description: 'Live sales & market-intelligence for the Fahrenheit One pre-opening pipeline — leads, conversions, membership demand and opening-day readiness.',
+    name: 'My Pre Sales Dash',
+    description: 'Live sales & market-intelligence for the pre-opening pipeline — leads, conversions, membership demand and opening-day readiness.',
     url: 'https://dashboard.clubf1.tech',
     live: true,
   },
@@ -50,8 +50,8 @@ export const TOOLS: Tool[] = [
   },
   {
     key: 'accountability',
-    name: 'Accountability',
-    description: 'Daily KPI scorecard and ops checklist, rolled up weekly for managers and monthly for the board — goals set by Fahrenheit One HQ.',
+    name: 'My Accountability',
+    description: 'Daily KPI scorecard and ops checklist, rolled up weekly for managers and monthly for the board — goals set from the business plan.',
     url: 'https://accountability.clubf1.tech',
     live: true,
   },

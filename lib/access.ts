@@ -1,4 +1,4 @@
-// Per-tool access model for the Club F1 suite.
+// Per-tool access model for The Grandstand suite.
 // Lives here for now; will move into the shared `clubf1-auth` package.
 //
 // A user's authorization is stored in Supabase Auth `app_metadata`:

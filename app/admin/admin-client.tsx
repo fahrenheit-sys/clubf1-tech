@@ -61,7 +61,7 @@ export default function AdminClient({ team, tools, currentUserId, userEmail }: {
       <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '18px 32px', background: UI.surface, borderBottom: `1px solid ${UI.border}` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/fahrenheit-one-logo.png" alt="Fahrenheit One" style={{ height: 26, width: 'auto' }} />
+          <img src="/grandstand-lockup-plum.png" alt="The Grandstand" style={{ height: 34, width: 'auto' }} />
           <div style={{ fontSize: 16, fontWeight: 600, color: UI.text }}>Team Access</div>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
@@ -78,7 +78,7 @@ export default function AdminClient({ team, tools, currentUserId, userEmail }: {
           <div style={{ display: 'grid', gridTemplateColumns: '2fr 2fr auto', gap: 12, alignItems: 'end' }}>
             <div>
               <label style={{ fontSize: 11, color: UI.textMuted, display: 'block', marginBottom: 5 }}>Email</label>
-              <input type="email" value={form.email} onChange={e => setForm(p => ({ ...p, email: e.target.value }))} placeholder="name@fahrenheitone.com" style={input} />
+              <input type="email" value={form.email} onChange={e => setForm(p => ({ ...p, email: e.target.value }))} placeholder="name@thegrandstandpaddington.com.au" style={input} />
             </div>
             <div>
               <label style={{ fontSize: 11, color: UI.textMuted, display: 'block', marginBottom: 5 }}>Temporary password</label>

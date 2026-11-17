@@ -31,7 +31,7 @@ export default async function Landing() {
         <div className="hero-inner" style={{ textAlign: 'center', padding: '14px 24px 0' }}>
           {/* Cream wordmark — the clay logo disappears against plum */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/f1-wordmark-cream.png" alt="Fahrenheit One" className="hero-mark" style={{ height: 50, width: 'auto', margin: '0 auto', display: 'block' }} />
+          <img src="/grandstand-wordmark-cream.png" alt="The Grandstand" className="hero-mark" style={{ width: '100%', maxWidth: 300, height: 'auto', margin: '0 auto', display: 'block' }} />
           <div style={{ marginTop: 12, fontSize: 10.5, fontWeight: 600, letterSpacing: '0.32em', textTransform: 'uppercase', color: UI.clayText }}>
             Technology Suite
           </div>
@@ -39,7 +39,7 @@ export default async function Landing() {
             Operational technology,<br />built in-house.
           </h1>
           <p style={{ fontSize: 14, color: UI.onPlumMuted, maxWidth: 560, margin: '12px auto 0', lineHeight: 1.6 }}>
-            A suite of tools powering Fahrenheit One @ Hakoah Paddington — from pre-opening
+            A suite of tools powering The Grandstand @ Hakoah Paddington — from pre-opening
             sales intelligence to day-to-day mission control.
           </p>
         </div>
@@ -72,7 +72,7 @@ export default async function Landing() {
       {/* Plum footer band */}
       <footer style={{ background: UI.glow, borderTop: `1px solid ${UI.plumLine}`, padding: '18px 24px', textAlign: 'center' }}>
         <div className="mono" style={{ fontSize: 10, color: UI.onPlumFaint, letterSpacing: '0.22em' }}>
-          FAHRENHEIT ONE · CLUB F1 TECH
+          THE GRANDSTAND · TECHNOLOGY SUITE
         </div>
         <div style={{ marginTop: 8, fontSize: 11.5, color: UI.onPlumMuted, letterSpacing: '0.04em' }}>
           @ Hakoah Paddington · Eastern Suburbs Sydney

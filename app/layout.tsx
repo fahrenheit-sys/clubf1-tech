@@ -23,8 +23,8 @@ const dmMono = DM_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Club F1 — Fahrenheit One Technology',
-  description: 'The Fahrenheit One technology suite — operational tools built in-house.',
+  title: 'Technology Suite — The Grandstand',
+  description: 'The Grandstand technology suite — operational tools built in-house.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

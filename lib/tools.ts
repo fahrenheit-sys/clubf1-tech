@@ -13,7 +13,7 @@ export const TOOLS: Tool[] = [
     // One grant for all three Studio sections in Consolidation — Images,
     // Movies and Marketing share the `studio` key.
     key: 'studio',
-    name: 'Studio',
+    name: 'My Studio',
     description: 'The image, movie and marketing libraries — brief new assets in the house style, and build co-branded pieces from what is already shot.',
     url: 'https://app.clubf1.tech',
     live: true,
@@ -36,14 +36,14 @@ export const TOOLS: Tool[] = [
   },
   {
     key: 'mc',
-    name: 'Mission Control',
+    name: 'My Mission Control',
     description: 'The GM command centre — capture insights by domain, triage them, dispatch to the team via ClickUp, and generate AI strategic briefs.',
     url: 'https://mc.clubf1.tech',
     live: true,
   },
   {
     key: 'engagement',
-    name: 'Engagement Monitor',
+    name: 'My Engagement Monitor',
     description: 'Member at-risk scoring from engagement tags, with AI-drafted retention comms a trainer approves before they go out.',
     url: 'https://engagement.clubf1.tech',
     live: true,
